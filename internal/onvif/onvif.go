@@ -95,7 +95,7 @@ func onvifDeviceService(w http.ResponseWriter, r *http.Request) {
 
 	case onvif.DeviceGetDeviceInformation:
 		// important for Hass: SerialNumber (unique server ID)
-		b = onvif.GetDeviceInformationResponse("", "go2rtc", app.Version, r.Host)
+		b = onvif.GetDeviceInformationResponse("alexpja", "go2rtc", app.Version, r.Host)
 
 	case onvif.ServiceGetServiceCapabilities:
 		// important for Hass

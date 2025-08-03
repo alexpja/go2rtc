@@ -184,6 +184,21 @@ func appendProfile(e *Envelope, tag, name string) {
 	</tt:VideoEncoderConfiguration>
 </trt:`, tag, `>
 `)
+	e.Append(`<trt:`, tag, ` token="`, name, `1" fixed="true">
+	<tt:Name>`, name, `1</tt:Name>
+	<tt:VideoSourceConfiguration token="`, name, `1">
+		<tt:Name>VSC</tt:Name>
+		<tt:SourceToken>`, name, `1</tt:SourceToken>
+		<tt:Bounds x="0" y="0" width="1920" height="1080"></tt:Bounds>
+	</tt:VideoSourceConfiguration>
+	<tt:VideoEncoderConfiguration token="vec1">
+		<tt:Name>VEC</tt:Name>
+		<tt:Encoding>H264</tt:Encoding>
+		<tt:Resolution><tt:Width>1920</tt:Width><tt:Height>1080</tt:Height></tt:Resolution>
+		<tt:RateControl />
+	</tt:VideoEncoderConfiguration>
+</trt:`, tag, `>
+`)
 }
 
 func GetVideoSourceConfigurationsResponse(names []string) []byte {
@@ -284,6 +299,14 @@ var responses = map[string]string{
 
 	MediaGetVideoEncoderConfiguration: `<trt:GetVideoEncoderConfigurationResponse>
 	<trt:Configuration token="vec">
+		<tt:Name>VEC</tt:Name>
+		<tt:Encoding>H264</tt:Encoding>
+		<tt:Resolution><tt:Width>1920</tt:Width><tt:Height>1080</tt:Height></tt:Resolution>
+		<tt:RateControl />
+	</trt:Configuration>
+</trt:GetVideoEncoderConfigurationResponse>
+<trt:GetVideoEncoderConfigurationResponse>
+	<trt:Configuration token="vec1">
 		<tt:Name>VEC</tt:Name>
 		<tt:Encoding>H264</tt:Encoding>
 		<tt:Resolution><tt:Width>1920</tt:Width><tt:Height>1080</tt:Height></tt:Resolution>
