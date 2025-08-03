@@ -38,6 +38,7 @@ func main() {
 		onvif.DeviceGetScopes,
 		onvif.DeviceGetServices,
 		onvif.DeviceGetSystemDateAndTime,
+		onvif.DeviceSetSystemDateAndTime,
 		onvif.DeviceSystemReboot:
 		b, err = client.DeviceRequest(operation)
 	case onvif.MediaGetProfiles,
@@ -48,7 +49,10 @@ func main() {
 		onvif.MediaGetVideoSourceConfigurations,
 		onvif.MediaGetAudioEncoderConfigurations,
 		onvif.MediaGetAudioSources,
-		onvif.MediaGetAudioSourceConfigurations:
+		onvif.MediaGetAudioSourceConfigurations,
+		onvif.MediaGetOSDOptions,
+		onvif.MediaGetCompatibleVideoAnalyticsConfigurations,
+		onvif.MediaSetSynchronizationPoint:
 		b, err = client.MediaRequest(operation)
 	case onvif.MediaGetProfile:
 		b, err = client.GetProfile(token)

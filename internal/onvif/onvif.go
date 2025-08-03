@@ -73,12 +73,16 @@ func onvifDeviceService(w http.ResponseWriter, r *http.Request) {
 		onvif.DeviceGetNetworkProtocols,
 		onvif.DeviceGetNTP,
 		onvif.DeviceGetScopes,
+		onvif.DeviceSetSystemDateAndTime,
 		onvif.MediaGetVideoEncoderConfigurations,
 		onvif.MediaGetVideoEncoderConfiguration,
 		onvif.MediaGetVideoEncoderConfigurationOptions,
 		onvif.MediaGetAudioEncoderConfigurations,
 		onvif.MediaGetAudioSources,
-		onvif.MediaGetAudioSourceConfigurations:
+		onvif.MediaGetAudioSourceConfigurations,
+		onvif.MediaGetOSDOptions,
+		onvif.MediaGetCompatibleVideoAnalyticsConfigurations,
+		onvif.MediaSetSynchronizationPoint:
 		b = onvif.StaticResponse(operation)
 
 	case onvif.DeviceGetCapabilities:

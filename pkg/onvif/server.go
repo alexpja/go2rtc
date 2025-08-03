@@ -21,6 +21,7 @@ const (
 	DeviceGetScopes                = "GetScopes"
 	DeviceGetServices              = "GetServices"
 	DeviceGetSystemDateAndTime     = "GetSystemDateAndTime"
+	DeviceSetSystemDateAndTime     = "SetSystemDateAndTime"
 	DeviceSystemReboot             = "SystemReboot"
 )
 
@@ -38,6 +39,9 @@ const (
 	MediaGetVideoSources                     = "GetVideoSources"
 	MediaGetVideoSourceConfiguration         = "GetVideoSourceConfiguration"
 	MediaGetVideoSourceConfigurations        = "GetVideoSourceConfigurations"
+	MediaGetOSDOptions				               = "GetOSDOptions"
+	MediaGetCompatibleVideoAnalyticsConfigurations = "GetCompatibleVideoAnalyticsConfigurations"
+	MediaSetSynchronizationPoint                   = "SetSynchronizationPoint"
 )
 
 func GetRequestAction(b []byte) string {
@@ -265,6 +269,9 @@ var responses = map[string]string{
 	<tds:Scopes><tt:ScopeDef>Fixed</tt:ScopeDef><tt:ScopeItem>onvif://www.onvif.org/type/Network_Video_Transmitter</tt:ScopeItem></tds:Scopes>
 </tds:GetScopesResponse>`,
 
+	DeviceSetSystemDateAndTime: `<tds:SetSystemDateAndTimeResponse />`,
+
+
 	MediaGetVideoEncoderConfigurations: `<trt:GetVideoEncoderConfigurationsResponse>
 	<tt:VideoEncoderConfiguration token="vec">
 		<tt:Name>VEC</tt:Name>
@@ -315,4 +322,13 @@ var responses = map[string]string{
 	MediaGetAudioEncoderConfigurations: `<trt:GetAudioEncoderConfigurationsResponse />`,
 	MediaGetAudioSources:               `<trt:GetAudioSourcesResponse />`,
 	MediaGetAudioSourceConfigurations:  `<trt:GetAudioSourceConfigurationsResponse />`,
+	MediaGetOSDOptions: `<trt:GetOSDOptionsResponse>
+	<trt:OSDOptions>
+	  <tt:MaximumNumberOfOSDs Total="0"/>
+	</trt:OSDOptions>
+  </trt:GetOSDOptionsResponse>`,
+
+  MediaGetCompatibleVideoAnalyticsConfigurations: `<trt:GetCompatibleVideoAnalyticsConfigurationsResponse />`,
+  MediaSetSynchronizationPoint: `<trt:SetSynchronizationPointResponse />`,
+
 }
