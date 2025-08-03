@@ -74,6 +74,8 @@ func onvifDeviceService(w http.ResponseWriter, r *http.Request) {
 		onvif.DeviceGetNTP,
 		onvif.DeviceGetScopes,
 		onvif.MediaGetVideoEncoderConfigurations,
+		onvif.MediaGetVideoEncoderConfiguration,
+		onvif.MediaGetVideoEncoderConfigurationOptions,
 		onvif.MediaGetAudioEncoderConfigurations,
 		onvif.MediaGetAudioSources,
 		onvif.MediaGetAudioSourceConfigurations:
