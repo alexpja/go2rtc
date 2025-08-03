@@ -42,6 +42,8 @@ func main() {
 		b, err = client.DeviceRequest(operation)
 	case onvif.MediaGetProfiles,
 		onvif.MediaGetVideoEncoderConfigurations,
+		onvif.MediaGetVideoEncoderConfiguration,
+		onvif.MediaGetVideoEncoderConfigurationOptions,
 		onvif.MediaGetVideoSources,
 		onvif.MediaGetVideoSourceConfigurations,
 		onvif.MediaGetAudioEncoderConfigurations,
