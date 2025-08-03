@@ -81,6 +81,7 @@ func onvifDeviceService(w http.ResponseWriter, r *http.Request) {
 		onvif.MediaGetAudioSources,
 		onvif.MediaGetAudioSourceConfigurations,
 		onvif.MediaGetOSDOptions,
+		onvif.MediaGetOSDs,
 		onvif.MediaGetCompatibleVideoAnalyticsConfigurations,
 		onvif.MediaSetSynchronizationPoint:
 		b = onvif.StaticResponse(operation)

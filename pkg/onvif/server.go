@@ -26,20 +26,21 @@ const (
 )
 
 const (
-	MediaGetAudioEncoderConfigurations       = "GetAudioEncoderConfigurations"
-	MediaGetAudioSources                     = "GetAudioSources"
-	MediaGetAudioSourceConfigurations        = "GetAudioSourceConfigurations"
-	MediaGetProfile                          = "GetProfile"
-	MediaGetProfiles                         = "GetProfiles"
-	MediaGetSnapshotUri                      = "GetSnapshotUri"
-	MediaGetStreamUri                        = "GetStreamUri"
-	MediaGetVideoEncoderConfigurations       = "GetVideoEncoderConfigurations"
-	MediaGetVideoEncoderConfiguration        = "GetVideoEncoderConfiguration"
-	MediaGetVideoEncoderConfigurationOptions = "GetVideoEncoderConfigurationOptions"
-	MediaGetVideoSources                     = "GetVideoSources"
-	MediaGetVideoSourceConfiguration         = "GetVideoSourceConfiguration"
-	MediaGetVideoSourceConfigurations        = "GetVideoSourceConfigurations"
+	MediaGetAudioEncoderConfigurations             = "GetAudioEncoderConfigurations"
+	MediaGetAudioSources                           = "GetAudioSources"
+	MediaGetAudioSourceConfigurations              = "GetAudioSourceConfigurations"
+	MediaGetProfile                                = "GetProfile"
+	MediaGetProfiles                               = "GetProfiles"
+	MediaGetSnapshotUri                            = "GetSnapshotUri"
+	MediaGetStreamUri                              = "GetStreamUri"
+	MediaGetVideoEncoderConfigurations             = "GetVideoEncoderConfigurations"
+	MediaGetVideoEncoderConfiguration              = "GetVideoEncoderConfiguration"
+	MediaGetVideoEncoderConfigurationOptions       = "GetVideoEncoderConfigurationOptions"
+	MediaGetVideoSources                           = "GetVideoSources"
+	MediaGetVideoSourceConfiguration               = "GetVideoSourceConfiguration"
+	MediaGetVideoSourceConfigurations              = "GetVideoSourceConfigurations"
 	MediaGetOSDOptions				               = "GetOSDOptions"
+	MediaGetOSDs                                   = "GetOSDs"
 	MediaGetCompatibleVideoAnalyticsConfigurations = "GetCompatibleVideoAnalyticsConfigurations"
 	MediaSetSynchronizationPoint                   = "SetSynchronizationPoint"
 )
@@ -328,7 +329,8 @@ var responses = map[string]string{
 	</trt:OSDOptions>
   </trt:GetOSDOptionsResponse>`,
 
-  MediaGetCompatibleVideoAnalyticsConfigurations: `<trt:GetCompatibleVideoAnalyticsConfigurationsResponse />`,
-  MediaSetSynchronizationPoint: `<trt:SetSynchronizationPointResponse />`,
+	MediaGetOSDs: `<trt:GetOSDsResponse />`,
+ 	MediaGetCompatibleVideoAnalyticsConfigurations: `<trt:GetCompatibleVideoAnalyticsConfigurationsResponse />`,
+	MediaSetSynchronizationPoint: `<trt:SetSynchronizationPointResponse />`,
 
 }

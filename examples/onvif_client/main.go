@@ -51,6 +51,7 @@ func main() {
 		onvif.MediaGetAudioSources,
 		onvif.MediaGetAudioSourceConfigurations,
 		onvif.MediaGetOSDOptions,
+		onvif.MediaGetOSDs,
 		onvif.MediaGetCompatibleVideoAnalyticsConfigurations,
 		onvif.MediaSetSynchronizationPoint:
 		b, err = client.MediaRequest(operation)
