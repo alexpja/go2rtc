@@ -25,17 +25,19 @@ const (
 )
 
 const (
-	MediaGetAudioEncoderConfigurations = "GetAudioEncoderConfigurations"
-	MediaGetAudioSources               = "GetAudioSources"
-	MediaGetAudioSourceConfigurations  = "GetAudioSourceConfigurations"
-	MediaGetProfile                    = "GetProfile"
-	MediaGetProfiles                   = "GetProfiles"
-	MediaGetSnapshotUri                = "GetSnapshotUri"
-	MediaGetStreamUri                  = "GetStreamUri"
-	MediaGetVideoEncoderConfigurations = "GetVideoEncoderConfigurations"
-	MediaGetVideoSources               = "GetVideoSources"
-	MediaGetVideoSourceConfiguration   = "GetVideoSourceConfiguration"
-	MediaGetVideoSourceConfigurations  = "GetVideoSourceConfigurations"
+	MediaGetAudioEncoderConfigurations       = "GetAudioEncoderConfigurations"
+	MediaGetAudioSources                     = "GetAudioSources"
+	MediaGetAudioSourceConfigurations        = "GetAudioSourceConfigurations"
+	MediaGetProfile                          = "GetProfile"
+	MediaGetProfiles                         = "GetProfiles"
+	MediaGetSnapshotUri                      = "GetSnapshotUri"
+	MediaGetStreamUri                        = "GetStreamUri"
+	MediaGetVideoEncoderConfigurations       = "GetVideoEncoderConfigurations"
+	MediaGetVideoEncoderConfiguration        = "GetVideoEncoderConfiguration"
+	MediaGetVideoEncoderConfigurationOptions = "GetVideoEncoderConfigurationOptions"
+	MediaGetVideoSources                     = "GetVideoSources"
+	MediaGetVideoSourceConfiguration         = "GetVideoSourceConfiguration"
+	MediaGetVideoSourceConfigurations        = "GetVideoSourceConfigurations"
 )
 
 func GetRequestAction(b []byte) string {
@@ -271,6 +273,44 @@ var responses = map[string]string{
 		<tt:RateControl />
 	</tt:VideoEncoderConfiguration>
 </trt:GetVideoEncoderConfigurationsResponse>`,
+
+	MediaGetVideoEncoderConfiguration: `<trt:GetVideoEncoderConfigurationResponse>
+	<trt:Configuration token="vec">
+		<tt:Name>VEC</tt:Name>
+		<tt:Encoding>H264</tt:Encoding>
+		<tt:Resolution><tt:Width>1920</tt:Width><tt:Height>1080</tt:Height></tt:Resolution>
+		<tt:RateControl />
+	</trt:Configuration>
+</trt:GetVideoEncoderConfigurationResponse>`,
+
+	MediaGetVideoEncoderConfigurationOptions: `<trt:GetVideoEncoderConfigurationOptionsResponse>
+	<trt:Options>
+ 		<tt:QualityRange>
+			<tt:Min>1</tt:Min>
+			<tt:Max>6</tt:Max>
+  		</tt:QualityRange>
+		<tt:H264>
+ 			<tt:ResolutionsAvailable>
+  				<tt:Width>1920</tt:Width>
+  				<tt:Height>1080</tt:Height>
+			</tt:ResolutionsAvailable>
+ 			<tt:GovLengthRange>
+ 				<tt:Min>1</tt:Min>
+ 				<tt:Max>150</tt:Max>
+ 			</tt:GovLengthRange>
+ 			<tt:FrameRateRange>
+ 				<tt:Min>1</tt:Min>
+ 				<tt:Max>20</tt:Max>
+ 			</tt:FrameRateRange>
+ 			<tt:EncodingIntervalRange>
+ 				<tt:Min>1</tt:Min>
+ 				<tt:Max>1</tt:Max>
+ 			</tt:EncodingIntervalRange>
+ 				<tt:H264ProfilesSupported>Main</tt:H264ProfilesSupported>
+ 				<tt:H264ProfilesSupported>Baseline</tt:H264ProfilesSupported>
+ 		</tt:H264>
+	</trt:Options>
+</trt:GetVideoEncoderConfigurationOptionsResponse>`,
 
 	MediaGetAudioEncoderConfigurations: `<trt:GetAudioEncoderConfigurationsResponse />`,
 	MediaGetAudioSources:               `<trt:GetAudioSourcesResponse />`,
